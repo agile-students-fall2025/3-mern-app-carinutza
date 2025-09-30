@@ -5,8 +5,11 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #fafafa;
+    text-align: left;
   }
-  
+  .About-article p{
+    margin-bottom: 1em;
+  }
   .About-article h1 {
     margin-bottom: 1rem;
     text-align: center;
