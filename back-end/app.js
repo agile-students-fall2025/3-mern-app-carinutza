@@ -77,6 +77,28 @@ app.post('/messages/save', async (req, res) => {
     })
   }
 })
+app.get('/aboutus', async (req, res) => {
+  try{
+    const aboutData = {
+      title: 'About Us',
+      paragraphs: [
+        "Paragraph one about me.",
+        "Paragraph two about hobbies.",
+      ]
+    }
+    return res.json({
+      data: aboutData,
+      status: 'all good',
+    })
+  }
+  catch(err){
+    console.error(err)
+    return res.status(400).json({
+      error: err,
+      status: 'failed to retrieve about us data',
+    })
+  }
+})
 
 // export the express app we created to make it available to other modules
 module.exports = app // CommonJS export style!

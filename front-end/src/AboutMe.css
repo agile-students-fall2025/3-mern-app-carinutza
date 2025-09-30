@@ -1,0 +1,24 @@
+.About-article {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fafafa;
+  }
+  
+  .About-article h1 {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .About-content {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .About-text p {
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+  }
