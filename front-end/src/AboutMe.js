@@ -16,7 +16,7 @@ const AboutMe = props => {
   return (
     <article className="About-article">
       <h1>{aboutData.title}</h1>
-      <img src={aboutData.imageUrl} alt="About me" className="About-photo" />
+      <img src={aboutData.imageUrl} alt="Carina-Ana-Maria Ilie" className="About-photo" />
       {aboutData.paragraphs.map((p, i) => (
         <p key={i}>{p}</p>
       ))}

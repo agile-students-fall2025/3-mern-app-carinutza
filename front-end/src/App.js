@@ -20,6 +20,7 @@ const App = props => {
             {/* a route to see a list of all messages */}
             <Route path="/messages" element={<Messages />} />
 
+            {/*Carina added a route to see content about me*/}
             <Route path="/aboutus" element ={<AboutMe />} />
 
             {/* a route for just a single message, where the id of the desired message is passed as a parameter */}

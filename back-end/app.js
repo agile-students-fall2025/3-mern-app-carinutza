@@ -22,6 +22,12 @@ mongoose
 const { Message } = require('./models/Message')
 const { User } = require('./models/User')
 
+const path = require('path')
+
+app.get('/me.jpg', (req, res) => {
+  res.sendFile(path.join(__dirname, 'me.jpg'))
+})
+
 // a route to handle fetching all messages
 app.get('/messages', async (req, res) => {
   // load all messages from database
@@ -87,7 +93,8 @@ app.get('/aboutus', async (req, res) => {
         "I also love snowsports. I have been skiing since I was 4 and snowboarding since I was 9. I try to go to the mountains at least 3 times a year, but it had been hard the past 2 years while I've been at university in the US.",
         "Lastly, I am trying to learn a third language: French. I take private tutoring classes twice a week. My current level is B2, but I hope to reach C1 soon.",
         "That's all about me! Can't wait to get to know you better too!"
-      ]
+      ],
+      imageUrl: 'http://localhost:5002/me.jpg'
     }
     return res.json({
       data: aboutData,
