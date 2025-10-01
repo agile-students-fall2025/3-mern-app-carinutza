@@ -24,9 +24,16 @@ const { User } = require('./models/User')
 
 const path = require('path')
 
-app.get('/me.jpg', (req, res) => {
-  res.sendFile(path.join(__dirname, 'me.jpg'))
+app.get('/assets/*', (req, res) => {
+  const filepath = req.params[0]
+  console.log(filepath)
+  res.sendFile(path.join(__dirname, filepath))
 })
+
+// app.get('/assets/*', (req, res) => {
+//   const filepath = req.params[0] // capture everything after /assets/
+//   res.send(`Requested file: ${filepath}`)
+// })
 
 // a route to handle fetching all messages
 app.get('/messages', async (req, res) => {
@@ -88,13 +95,13 @@ app.get('/aboutus', async (req, res) => {
     const aboutData = {
       title: 'About Us',
       paragraphs: [
-        "My name is Carina Ilie. I am a junior at NYU, studying Finance & Data Science and a double major in Computer Science. I am originally from Bucharest, Romania. This esmester, I am studying aborad in Prague, Cezchia.",
+        "My name is Carina Ilie. I am a junior at NYU, studying Finance & Data Science and a double major in Computer Science. I am originally from Bucharest, Romania. This semester, I am studying aborad in Prague, Czechia.",
         "One of my hobbies is traveling. I have been in most countries in Europe, some states in the US, and some countries in Asia. My current bucket-list destination is Singapore.",
-        "I also love snowsports. I have been skiing since I was 4 and snowboarding since I was 9. I try to go to the mountains at least 3 times a year, but it had been hard the past 2 years while I've been at university in the US.",
+        "I also love snowsports. I have been skiing since I was 4 and snowboarding since I was 9. I try to go to the mountains at least 3 times a year, but it has been hard the past 2 years while I've been at university in the US.",
         "Lastly, I am trying to learn a third language: French. I take private tutoring classes twice a week. My current level is B2, but I hope to reach C1 soon.",
         "That's all about me! Can't wait to get to know you better too!"
       ],
-      imageUrl: 'http://localhost:5002/me.jpg'
+      imageUrl: 'http://localhost:5002/assets/me.jpg'
     }
     return res.json({
       data: aboutData,

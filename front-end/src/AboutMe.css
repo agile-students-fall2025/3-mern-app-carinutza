@@ -25,3 +25,10 @@
     margin-bottom: 0.75rem;
     line-height: 1.5;
   }
+  .About-photo {
+    max-width: 250px;   
+    height: auto;       
+    border-radius: 8px; 
+    display: block;     
+    margin: 0 auto 1rem auto; 
+  }
